@@ -1,0 +1,14 @@
+﻿@model List<HK1_2020_2021_1.Models.NhanVienModel>
+@{
+}
+<form action="/NV_BT/Index">
+    <label for="ten">Tên nhân viên:</label>
+    <select name="MaNV">
+        @foreach (var item in Model)
+        {
+        <option value="@item.MaNhanVien">@item.TenNhanVien</option>
+        }
+    </select>
+    <br />
+    <input type="submit" value="Liệt kê" name="submit"/>
+</form>

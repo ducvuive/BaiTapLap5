@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HK1_2020_2021_1.Models.NV_BT>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaNhanVien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaThietBi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaCanHo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LanThu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayBaoTri)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNhanVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaThietBi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCanHo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LanThu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBaoTri)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Delete", "Delete", item)
+                @Html.ActionLink("View", "Details", item) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<object>
+@{
+}
+
+<table>
+    <tr>
+        <th>Tên nhân viên</th>
+        <th>Số điện thoại</th>
+        <th>Số lần sửa</th>
+    </tr>
+    @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.GetType().GetProperty("MaNV").GetValue(item, null)
+                    </td>
+                    <td>
+                        @item.GetType().GetProperty("SoDT").GetValue(item, null)
+                    </td>
+                    <td>
+                        @item.GetType().GetProperty("SoLan").GetValue(item, null)
+                    </td>
+                </tr>
+            }
+</table>
